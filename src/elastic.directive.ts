@@ -92,6 +92,8 @@ export class ElasticDirective implements OnInit, OnDestroy, AfterViewInit {
     }
 
     const previousHeight = parseInt(this.textareaEl.style.height, 10);
+    // reset height to get accurate scrollHeight
+		this.textareaEl.style.height = '1px';
     const newHeight = this.textareaEl.scrollHeight;
 
     this.textareaEl.style.height = 'auto';
